@@ -4,21 +4,21 @@ import * as C from "../../styles/constants";
 export const Wrapper = styled.div`
   position: relative;
   display: flex;
-  max-width: 650px;
-  background: ${C.PizzaWhite};
+  max-width: 100%;
+  width: 100%;
+  background: ${C.PizzaGray};
   border-radius: 15px;
   height: 100%;
   overflow: hidden;
-  margin: 10px auto;
+  margin: 32px auto;
 
   @media (max-width: ${C.MD}) {
-    max-width: 320px;
-    width: 100%;
+    margin: 10px auto;
   }
 `;
 
 export const Image = styled.img`
-  max-width: 180px;
+  max-width: 200px;
   width: 100%;
   object-fit: cover;
   overflow: auto;
@@ -29,48 +29,48 @@ export const Image = styled.img`
   }
 `;
 
-export const Description = styled.p`
-  width: 45%;
+export const Description = styled.div`
+  width: 60%;
 
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  margin-left: 8px;
-  padding: 10px;
+  padding: 1.2rem;
 
-  @media (max-width: ${C.MD}) {
-    width: 55%;
-  }
-`;
+  .text-block {
+    font-size: 1rem;
+    color: ${C.PizzaBlack};
 
-export const TextBlock = styled.div`
-  font-size: 1rem;
-  color: ${C.PizzaBlack};
-
-  .title {
+    .title {
       font-size: 1.5rem;
       margin-bottom: 1rem;
     }
 
-  @media (max-width: ${C.MD}) {
-    font-size: 0.8rem;
-    .title {
-      font-size: 1.05rem;
-      margin-bottom: 1rem;
+    @media (max-width: ${C.MD}) {
+      font-size: 0.8rem;
+      .title {
+        font-size: 1.05rem;
+        margin-bottom: 1rem;
+      }
     }
   }
-`;
 
-export const Price = styled.div`
-  color: ${C.PizzaGreen};
-  font-size: 2rem;
-  font-weight: bold;
+  .price {
+    color: ${C.PizzaGreen};
+    font-size: 2rem;
+    font-weight: bold;
+
+    @media (max-width: ${C.MD}) {
+      font-size: 1.2rem;
+    }
+  }
 
   @media (max-width: ${C.MD}) {
-    font-size: 1.2rem;
+    width: 55%;
+    padding: 10px;
   }
 `;
 
 export const WrapperCheckbox = styled.div`
   width: 10%;
-`
+`;

@@ -1,10 +1,11 @@
 import { createGlobalStyle } from "styled-components";
+import * as C from './constants';
 
 const GlobalStyle = createGlobalStyle`
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
-  background: #ececec;
+  background: ${C.PizzaWhite};
 }
 button {
   font-family: 'Poppins', sans-serif;

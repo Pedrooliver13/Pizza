@@ -1,22 +1,26 @@
 import Checkbox from "../Checkbox";
 import * as Styled from "./style";
 
-const Card = (props) => {
+const Card = ({ data, index, state, setState }) => {
   return (
     <Styled.Wrapper>
-      <Styled.Image src="https://i.imgur.com/REcYtUX.png" alt="" />
+      <Styled.Image src={data?.image} alt={data.name} />
 
       <Styled.Description>
-        <Styled.TextBlock>
-          <h1 className="title">Nova-iorquina</h1>
-          <div className="description">Massa pequena ideal para 1 pessoa</div>
-        </Styled.TextBlock>
+        <div className="text-block">
+          <h1 className="title">{data.name}</h1>
+          <div className="description">{data.description}</div>
+        </div>
 
-        <Styled.Price>R$ 5,00</Styled.Price>
+        <div>R$ {data.price}</div>
       </Styled.Description>
-      
+
       <Styled.WrapperCheckbox>
-        <Checkbox />
+        <Checkbox
+          index={index}
+          checked={state?.id}
+          onClick={() => setState({ ...data, id: index })}
+        />
       </Styled.WrapperCheckbox>
     </Styled.Wrapper>
   );

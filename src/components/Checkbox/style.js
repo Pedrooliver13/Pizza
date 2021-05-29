@@ -37,7 +37,7 @@ export const Wrapper = styled.div`
     width: 22px;
     height: 22px;
     border: 1px solid #cccccc;
-    background: ${(props) => props.theme.white};
+    background: ${C.PizzaWhite};
     border-radius: 7px;
     box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
   }
