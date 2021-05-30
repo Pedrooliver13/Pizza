@@ -10,10 +10,10 @@ To clone and run this application, you'll need [Git](https://git-scm.com), [Node
 
 ```bash
 # Clone this repository
-$ git clone 
+$ git clone https://github.com/Pedrooliver13/Pizza.git
 
 # Go into the repository
-$ cd 
+$ cd Pizza
 
 # Install dependencies
 $ yarn install
