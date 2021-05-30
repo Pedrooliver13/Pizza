@@ -6,7 +6,8 @@ import rootReducer from './modules/rootReduce';
 
 const persistConfig = {
   key: 'root',
-  storage
+  storage,
+  blacklist: ["pizzaReducer"]
 }
 
 const composeEnhancers =

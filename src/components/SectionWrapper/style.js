@@ -11,6 +11,17 @@ export const Wrapper = styled.div`
   border-radius: 12px;
   box-shadow: 0px 2px 24px 0px rgba(0, 0, 0, 0.2);
 
+  opacity: 0;
+  transform: translateY(50px);
+  animation: animeUp 0.5s forwards;
+
+  @keyframes animeUp {
+    to {
+      opacity: initial;
+      transform: initial;
+    }
+  }
+
   @media (max-width: ${C.MD}) {
     padding: 20px;
   }
