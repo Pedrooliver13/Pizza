@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import * as C from "./constants";
 
 export const Container = styled.div`
   width: 100%;
@@ -21,5 +22,21 @@ export const Container = styled.div`
   /* BREAKPOINT 1200px */
   @media (min-width: 75em) {
     max-width: 1200px;
+  }
+`;
+
+export const Content = styled.div`
+  max-width: 600px;
+  width: 100%;
+  margin-top: -40px;
+  margin-bottom: 40px;
+  margin-left: auto;
+  margin-right: auto;
+
+  @media (max-width: ${C.MD}) {
+    max-width: 500px;
+    margin-top: -20px;
+    padding-right: 12px;
+    padding-left: 12px;
   }
 `;

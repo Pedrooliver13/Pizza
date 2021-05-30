@@ -2,14 +2,6 @@ import { createGlobalStyle } from "styled-components";
 import * as C from './constants';
 
 const GlobalStyle = createGlobalStyle`
-body {
-  margin: 0;
-  font-family: 'Poppins', sans-serif;
-  background: ${C.PizzaWhite};
-}
-button {
-  font-family: 'Poppins', sans-serif;
-}
 * {
   box-sizing: border-box;
 }
@@ -20,6 +12,17 @@ h4,
 p,
 span {
   margin: 0;
+}
+html {
+  font-size: 16px;
+}
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: ${C.PizzaWhite};
+}
+button {
+  font-family: 'Poppins', sans-serif;
 }
 `;
 

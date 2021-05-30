@@ -1,4 +1,6 @@
 import Checkbox from "../Checkbox";
+import { formatBRL } from '../../utils/index';
+
 import * as Styled from "./style";
 
 const Card = ({ data, index, state, setState }) => {
@@ -12,7 +14,7 @@ const Card = ({ data, index, state, setState }) => {
           <div className="description">{data.description}</div>
         </div>
 
-        <div>R$ {data.price}</div>
+        <div className="price"><span>{formatBRL(data.price)}</span></div>
       </Styled.Description>
 
       <Styled.WrapperCheckbox>

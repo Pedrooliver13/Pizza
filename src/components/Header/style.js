@@ -13,12 +13,15 @@ export const Content = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  padding-bottom: 40px;
 `;
 
 export const Logo = styled.div`
   display: flex;
   align-items: center;
   font-size: 2.5rem;
+  font-weight: bold;
   color: ${C.PizzaWhite};
 
   .title {
@@ -50,7 +53,7 @@ export const Image = styled.img`
   object-fit: contain;
   margin-right: 1rem;
 
-  @media (max-width: ${C.MD}) {
+  @media (max-width: ${C.SM}) {
     display: none;
   }
 `;
@@ -59,6 +62,7 @@ export const Point = styled.div`
   display: flex;
   text-align: right;
   color: ${C.PizzaYellow};
+  font-weight: bold;
 
   .title {
     font-size: 1.2rem;

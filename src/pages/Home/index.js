@@ -1,60 +1,28 @@
-import { useState } from "react";
+import { Content } from '../../styles/container';
 
-import Header from "../../components/Header";
-import Card from "../../components/Card";
-import SectionWrapper from "../../components/SectionWrapper";
+import Step1 from '../Step1';
 import SectionMain from "../../components/SectionMain";
 
-const Home = () => {
-  const [checked, setChecked] = useState();
+import { pizzas } from "../../services/pizza.json";
 
-  const pizza = [
-    {
-      id: 1,
-      name: "Pizza",
-      image: "https://i.imgur.com/REcYtUX.png",
-      price: "50,00",
-      description: "mussarela, peito de peru, palmito, parmesão, orégano.",
-    },
-    {
-      id: 2,
-      name: "Pizza",
-      image: "https://i.imgur.com/REcYtUX.png",
-      price: "50,00",
-      description: "mussarela, peito de peru, palmito, parmesão, orégano.",
-    },
-    {
-      id: 3,
-      name: "Pizza",
-      image: "https://i.imgur.com/REcYtUX.png",
-      price: "50,00",
-      description: "mussarela, peito de peru, palmito, parmesão, orégano.",
-    },
-    {
-      id: 4,
-      name: "Pizza",
-      image: "https://i.imgur.com/REcYtUX.png",
-      price: "50,00",
-      description: "mussarela, peito de peru, palmito, parmesão, orégano.",
-    },
-  ];
+const Home = () => {
+  function getRandomNumber(totalLength) {
+    const randomNumber = Math.floor(Math.random() * (totalLength - 1));
+    return randomNumber;
+  }
+  
+  function getFeaturedItem(results) {
+    let randomNumber = getRandomNumber(results.length);
+    let featuredItem = results[randomNumber];
+  
+    return featuredItem;
+  }
 
   return (
-    <>
-      <Header />
-
-      <SectionMain />
-      <SectionWrapper>
-        {pizza.map((item, index) => (
-          <Card
-            data={item}
-            index={index}
-            state={checked}
-            setState={setChecked}
-          />
-        ))}
-      </SectionWrapper>
-    </>
+    <Content>
+      <SectionMain data={getFeaturedItem(pizzas)}/>
+      <Step1 />
+    </Content>
   );
 };
 

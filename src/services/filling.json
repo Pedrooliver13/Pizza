@@ -1,0 +1,22 @@
+{
+  "filling": [
+    {
+      "name": "Frango com catupiry",
+      "description": "Pizza de frango com catupiry.",
+      "price": 50,
+      "image": "https://i.pinimg.com/564x/66/b3/b1/66b3b1a8499d524288130ff9f0218a53.jpg"
+    },
+    {
+      "name": "Calabresa",
+      "description": "Pizza de calabresa.",
+      "price": 100,
+      "image": "https://i.pinimg.com/564x/89/4e/d6/894ed63a2bf9a4c5d2f8c6a120b72326.jpg"
+    },
+    {
+      "name": "Bacon",
+      "description": "Pizza de bacon.",
+      "price": 80,
+      "image": "https://i.pinimg.com/564x/3a/1e/58/3a1e58148ed5bd4bd8d5b65b6dec94c0.jpg"
+    }
+  ]
+}

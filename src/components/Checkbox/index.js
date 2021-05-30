@@ -1,6 +1,6 @@
 import * as Styled from './style';
 
-const Checkbox = ({ checked, onClick, index }) => {
+const Checkbox = ({ checked, index, onClick }) => {
   return (
     <Styled.Wrapper onClick={onClick}>
       <input

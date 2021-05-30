@@ -1,23 +1,35 @@
-import { FiArrowRight } from 'react-icons/fi';
+import { useState } from "react";
+import { FiArrowRight } from "react-icons/fi";
 
+import Card from "../Card";
 import Button from "../Button";
 
 import * as Styled from "./style";
 
-const SectionWrapper = ({ children }) => {
+const SectionWrapper = ({ data, handleClick, step }) => {
+  const [checked, setChecked] = useState();
+
   return (
     <Styled.Wrapper>
       <h1 className="title">Ou monte sua pizza</h1>
       <h3 className="subtitle">
-        Selecione Sua Massa
-        <span>0 / 3</span>
+        Selecione Sua Massa:
+        <span>{ step } / 3</span>
       </h3>
 
-      {children}
+      {data.map((item, index) => (
+        <Card
+          key={index}
+          data={item}
+          index={index}
+          state={checked}
+          setState={setChecked}
+        />
+      ))}
 
       <Styled.Submit>
-        <Button>
-          montar meu pedido <FiArrowRight  size={20}/>
+        <Button onClick={() => handleClick(checked)}>
+          montar meu pedido <FiArrowRight size={20} />
         </Button>
       </Styled.Submit>
     </Styled.Wrapper>

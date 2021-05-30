@@ -1,64 +1,68 @@
-import { useDispatch } from 'react-redux';
+import { useDispatch } from "react-redux";
 import { FiCheck } from "react-icons/fi";
 
 import Button from "../Button";
+import { formatBRL } from "../../utils";
+import { addPoint } from "../../store/modules/points/actions";
 
 import * as Styled from "./style";
 import BadgeImge from "../../assets/badge.png";
-import { addPoint } from '../../store/modules/points/actions';
 
-const SectionMain = () => {
+const SectionMain = ({ data, title, hiddenButton }) => {
   const dispatch = useDispatch();
-  
-  function handleClick() {
-    dispatch(addPoint(50));
+
+  function handleClick(points) {
+    dispatch(addPoint(points));
   }
-  
+
   return (
-    <Styled.Wrapper>
-      <Styled.Content>
-        <h1 className="title">Pizza do dia:</h1>
+    <main>
+      <Styled.Wrapper>
+        <h1 className="title">{title ? title : "Pizza do dia:"}</h1>
 
         <div className="accumulate-points">
           <div className="bg-badge">
             <img src={BadgeImge} alt="background badge" />
           </div>
           <p>
-            <span>50</span> <br /> pontos
+            <span>{data.points}</span> <br /> pontos
           </p>
         </div>
 
         <Styled.Card>
-          <Styled.Image
-            src="https://i.imgur.com/REcYtUX.png"
-            alt="Foto de uma Pizza"
-          />
+          <Styled.Image src={data?.image} alt="Foto de uma Pizza" />
 
           <Styled.Description>
             <div className="text-block">
-              <h1 className="title">Nova-iorquina</h1>
+              <h1 className="title">{data?.name}</h1>
               <div className="description">
                 <span>Massa:</span>
-                Napolitana
+                {data?.dough}
                 <span>Ingredientes:</span>
-                mussarela, peito de peru, palmito, parmesão, orégano.{" "}
+                {data?.filling}
               </div>
             </div>
 
             <Styled.Buy>
-              <div className="price">R$ 5,00</div>
-              
-              <Button onClick={handleClick}>
-                quero! <FiCheck size={24} />
-              </Button>
+              <div className="price">
+                <span>{formatBRL(data?.price)}</span>
+              </div>
+
+              {!hiddenButton && (
+                <Button onClick={() => handleClick(data.points)}>
+                  quero! <FiCheck size={24} />
+                </Button>
+              )}
             </Styled.Buy>
           </Styled.Description>
         </Styled.Card>
-      </Styled.Content>
-      <Styled.Info>
-        ganhe pontos ao concluir o seu pedido <span>*</span>
-      </Styled.Info>
-    </Styled.Wrapper>
+      </Styled.Wrapper>
+      {!hiddenButton && (
+        <Styled.Info>
+          ganhe pontos ao concluir o seu pedido <span>*</span>
+        </Styled.Info>
+      )}
+    </main>
   );
 };
 

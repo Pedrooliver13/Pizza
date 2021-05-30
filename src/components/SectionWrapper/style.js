@@ -1,17 +1,19 @@
 import styled from "styled-components";
 import * as C from "../../styles/constants";
 
-export const Wrapper = styled.section`
-  max-width: 600px;
-  width: 100%;
-  padding: 30px;
-  margin: 10px auto;
+export const Wrapper = styled.div`
   font-size: 1.2rem;
   line-height: 1.5;
+  padding: 30px;
+  margin-top: 50px;
 
   background-color: ${C.PizzaWhite};
-  border-radius: 14px;
+  border-radius: 12px;
   box-shadow: 0px 2px 24px 0px rgba(0, 0, 0, 0.2);
+
+  @media (max-width: ${C.MD}) {
+    padding: 20px;
+  }
 
   .title {
     font-size: 1.5rem;
@@ -23,11 +25,12 @@ export const Wrapper = styled.section`
   }
 
   .subtitle {
+    font-size: 1.2rem;
     font-weight: bold;
-    color: ${C.PizzaBlue};
+    color: ${C.PizzaBlueLight};
 
     display: flex;
-    align-items: flex-end;
+    align-items: center;
     justify-content: space-between;
 
     span {
@@ -40,11 +43,6 @@ export const Wrapper = styled.section`
     @media (max-width: ${C.MD}) {
       font-size: 0.9rem;
     }
-  }
-
-  @media (max-width: ${C.SM}) {
-    max-width: 300px;
-    padding: 16px 12px;
   }
 `;
 

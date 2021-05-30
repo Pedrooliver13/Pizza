@@ -1,0 +1,22 @@
+{
+  "dough": [
+    {
+      "name": "Massa fina",
+      "description": "Massa fina.",
+      "price": 25,
+      "image": "https://t2.rg.ltmcdn.com/pt/images/6/7/7/img_massa_de_pizza_simples_3776_600.jpg"
+    },
+    {
+      "name": "Massa média",
+      "description": "Massa média.",
+      "price": 62,
+      "image": "https://static.clubedaanamariabraga.com.br/wp-content/uploads/2019/03/massa-de-pizza-de-inhame-21406.jpg"
+    },
+    {
+      "name": "Massa grande",
+      "description": "Massa grande.",
+      "price": 100,
+      "image": "https://i.pinimg.com/originals/3b/94/ae/3b94ae2816f3171fde9a5d31cb5542ca.jpg"
+    }
+  ]
+}

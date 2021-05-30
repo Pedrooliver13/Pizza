@@ -8,11 +8,15 @@ export const Wrapper = styled.div`
   width: 100%;
   background: ${C.PizzaGray};
   border-radius: 15px;
+  min-height: 250px;
+  max-height: 250px;
   height: 100%;
   overflow: hidden;
   margin: 32px auto;
 
   @media (max-width: ${C.MD}) {
+    max-height: 180px;
+    min-height: 180px;
     margin: 10px auto;
   }
 `;
@@ -25,7 +29,10 @@ export const Image = styled.img`
 
   @media (max-width: ${C.MD}) {
     max-width: 40%;
-    width: 100%;
+  }
+
+  @media (max-width: ${C.SM}) {
+    max-width: 35%;
   }
 `;
 
@@ -49,16 +56,20 @@ export const Description = styled.div`
     @media (max-width: ${C.MD}) {
       font-size: 0.8rem;
       .title {
-        font-size: 1.05rem;
+        font-size: 1rem;
         margin-bottom: 1rem;
       }
     }
   }
 
   .price {
-    color: ${C.PizzaGreen};
+    color: ${C.PizzaGreenLight};
     font-size: 2rem;
     font-weight: bold;
+
+    span {
+      color: ${C.PizzaGreen};
+    }
 
     @media (max-width: ${C.MD}) {
       font-size: 1.2rem;
@@ -67,7 +78,7 @@ export const Description = styled.div`
 
   @media (max-width: ${C.MD}) {
     width: 55%;
-    padding: 10px;
+    padding: 1rem .5rem;
   }
 `;
 

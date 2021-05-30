@@ -1,24 +1,10 @@
 import styled from "styled-components";
 import * as C from "../../styles/constants";
 
-export const Wrapper = styled.main`
-  max-width: 600px;
-  width: 100%;
-  margin-top: -40px;
-  margin-bottom: 40px;
-  margin-left: auto;
-  margin-right: auto;
-
-  @media (max-width: ${C.SM}) {
-    max-width: 300px;
-    margin-top: -20px;
-  }
-`;
-
-export const Content = styled.section`
+export const Wrapper = styled.section`
   position: relative;
   background-color: ${C.PizzaGray};
-  box-shadow: 0px 2px 12px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 2px 24px 0px rgba(0, 0, 0, 0.3);
   border-radius: 12px;
   padding: 8px 16px;
 
@@ -33,11 +19,11 @@ export const Content = styled.section`
 
   .accumulate-points {
     position: absolute;
-    width: 90px;
-    height: 90px;
+    width: 100px;
+    height: 100px;
 
     top: -33px;
-    right: -16px;
+    right: -20px;
     z-index: 1;
     overflow: hidden;
 
@@ -56,7 +42,9 @@ export const Content = styled.section`
     }
 
     @media (max-width: ${C.MD}) {
-      right: -10px;
+      right: -12px;
+      width: 90px;
+      height: 90px;
     }
 
     @-moz-keyframes spin {
@@ -83,37 +71,25 @@ export const Content = styled.section`
       left: 0;
       width: 100%;
       text-align: center;
-      font-size: 0.75rem;
+      font-size: 0.85rem;
       color: #fff;
-      padding-top: 1.4rem;
+      padding-top: 1.8rem;
       line-height: 17px;
 
       span {
         font-weight: bold;
         font-size: 1rem;
       }
-    }
-  }
 
-  button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 15px;
-    padding: 10px 3px 10px 10px;
-    width: 143px;
-    height: 45px;
-    outline: none;
-    border: none;
-    color: ${C.PizzaWhite};
-    font-size: 20px;
-    cursor: pointer;
+      @media (max-width: ${C.MD}) {
+        font-size: 0.8rem;
+        padding-top: 1.5rem;
 
-    @media (max-width: ${C.SM}) {
-      width: 100px;
-      font-size: 1rem;
-      height: 30px; 
-      border-radius: 10px;
+        span {
+          font-weight: bold;
+          font-size: 0.9rem;
+        }
+      }
     }
   }
 `;
@@ -129,6 +105,10 @@ export const Card = styled.div`
   overflow: hidden;
   margin: 12px auto;
 
+  @media (max-width: ${C.MD}) {
+    margin: 10px auto;
+  }
+
   @media (max-width: ${C.SM}) {
     margin: 10px auto;
   }
@@ -141,8 +121,9 @@ export const Image = styled.img`
   overflow: auto;
 
   @media (max-width: ${C.LG}) {
-    max-width: 45%;
+    max-width: 40%;
     width: 100%;
+    object-position: center center;
   }
 `;
 
@@ -190,19 +171,47 @@ export const Buy = styled.div`
   justify-content: space-between;
   margin-top: 15px;
 
+  @media (max-width: ${C.MD}) {
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
   .price {
-    color: ${C.PizzaGreen};
+    color: ${C.PizzaGreenLight};
     font-size: 1.8rem;
     font-weight: bold;
+
+    span {
+      display: inline-block;
+      color: ${C.PizzaGreen};
+    }
 
     @media (max-width: ${C.SM}) {
       font-size: 1.1rem;
     }
   }
 
-  @media (max-width: ${C.SM}) {
-    flex-direction: column;
-    align-items: flex-start;
+  button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    padding: 10px 3px 10px 10px;
+    width: 143px;
+    height: 45px;
+    outline: none;
+    border: none;
+    color: ${C.PizzaWhite};
+    font-size: 20px;
+    cursor: pointer;
+
+    @media (max-width: ${C.SM}) {
+      width: 100%;
+      font-size: 1rem;
+      height: 35px;
+      border-radius: 10px;
+    }
   }
 `;
 

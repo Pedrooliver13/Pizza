@@ -2,9 +2,9 @@ import { ADD_POINT, CLEAR_POINT } from "../typeActions";
 
 export const addPoint = (data) => ({
   type: ADD_POINT,
-  data
-})
+  data,
+});
 
 export const clearPoint = () => ({
-  type: CLEAR_POINT
-})
+  type: CLEAR_POINT,
+});

@@ -1,0 +1,31 @@
+{
+  "pizzas": [
+    {
+      "name": "Cheddar e catupiry",
+      "size": "Média",
+      "dough": "Massa média",
+      "filling": "Cheddar e catupiry",
+      "price": 55,
+      "points": 70,
+      "image": "https://i.pinimg.com/564x/cd/e4/87/cde487a98a697c77f9fbdedb9f83b0ab.jpg"
+    },
+    {
+      "name": "Frango catupiry",
+      "size": "Média",
+      "dough": "Massa Grande",
+      "filling": "Frago e Catupiry",
+      "price": 55,
+      "points": 199,
+      "image": "https://i.pinimg.com/564x/ff/87/e0/ff87e01c5534ec61f74ea218516215fe.jpg"
+    },
+    {
+      "name": "Calabresa",
+      "size": "Grande",
+      "dough": "Massa média",
+      "filling": "Calabresa e Queijo",
+      "price": 55,
+      "points": 70,
+      "image": "https://i.pinimg.com/564x/6e/17/df/6e17df741fa527191dbc66387fe8dd48.jpg"
+    }
+  ]
+}
