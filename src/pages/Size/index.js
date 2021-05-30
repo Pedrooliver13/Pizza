@@ -8,7 +8,7 @@ import { addPrice, addSize } from "../../store/modules/pizza/actions";
 import { size } from "../../services/size.json";
 import { Content } from "../../styles/container";
 
-const Step2 = () => {
+const Size = () => {
   const [message, setMessage] = useState();
   const dispatch = useDispatch();
   const history = useHistory();
@@ -45,4 +45,4 @@ const Step2 = () => {
   );
 };
 
-export default Step2;
+export default Size;

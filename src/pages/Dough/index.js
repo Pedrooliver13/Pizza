@@ -7,7 +7,7 @@ import SectionWrapper from "../../components/SectionWrapper";
 
 import { dough } from "../../services/dough.json";
 
-const Step1 = () => {
+const Dough = () => {
   const [message, setMessage] = useState();
   const dispatch = useDispatch();
   const history = useHistory();
@@ -36,4 +36,4 @@ const Step1 = () => {
   );
 };
 
-export default Step1;
+export default Dough;

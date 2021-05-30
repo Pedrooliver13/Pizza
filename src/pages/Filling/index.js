@@ -9,7 +9,7 @@ import { addFilling, addPrice } from "../../store/modules/pizza/actions";
 import { Content } from "../../styles/container";
 import { filling } from "../../services/filling.json";
 
-const Step3 = () => {
+const Filling = () => {
   const [message, setMessage] = useState();
   const dispatch = useDispatch();
   const history = useHistory();
@@ -47,4 +47,4 @@ const Step3 = () => {
   );
 };
 
-export default Step3;
+export default Filling;
