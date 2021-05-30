@@ -33,6 +33,17 @@ export const Content = styled.div`
   margin-left: auto;
   margin-right: auto;
 
+  opacity: 0;
+  transform: translateY(50px);
+  animation: animeUp 0.5s forwards;
+
+  @keyframes animeUp {
+    to {
+      opacity: initial;
+      transform: initial;
+    }
+  }
+
   @media (max-width: ${C.MD}) {
     max-width: 500px;
     margin-top: -20px;

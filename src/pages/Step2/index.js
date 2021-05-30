@@ -1,19 +1,32 @@
-import { useDispatch, useSelector } from "react-redux";
+import { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
 
-import { addPrice, addSize } from "../../store/modules/pizza/actions";
 import SectionWrapper from "../../components/SectionWrapper";
+import { addPrice, addSize } from "../../store/modules/pizza/actions";
 
-import { Content } from "../../styles/container";
 import { size } from "../../services/size.json";
+import { Content } from "../../styles/container";
 
 const Step2 = () => {
+  const [message, setMessage] = useState();
   const dispatch = useDispatch();
   const history = useHistory();
 
   const { step } = useSelector((state) => state.pizzaReducer.pizza.size);
+  const doughState = useSelector((state) => state.pizzaReducer.pizza.dough);
+
+  useEffect(() => {
+    if (!doughState.name) {
+      return history.push("/");
+    }
+  }, [doughState, history]);
 
   const handleClick = (data) => {
+    if (!data) {
+      return setMessage(true);
+    }
+
     dispatch(addSize(data));
     dispatch(addPrice(data.price));
     history.push("/step3");
@@ -22,7 +35,12 @@ const Step2 = () => {
 
   return (
     <Content>
-      <SectionWrapper data={size} handleClick={handleClick} step={step} />
+      <SectionWrapper
+        data={size}
+        step={step}
+        message={message}
+        handleClick={handleClick}
+      />
     </Content>
   );
 };

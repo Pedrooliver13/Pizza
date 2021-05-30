@@ -26,6 +26,15 @@
       "price": 55,
       "points": 70,
       "image": "https://i.pinimg.com/564x/6e/17/df/6e17df741fa527191dbc66387fe8dd48.jpg"
+    },
+    {
+      "name": "Napolitana",
+      "size": "Grande",
+      "dough": "Massa grande",
+      "filling": "Presunto e queijo",
+      "price": 55,
+      "points": 70,
+      "image": "https://i.pinimg.com/564x/25/5a/6f/255a6f8daf6b3b340e1abfad825bb921.jpg"
     }
   ]
 }

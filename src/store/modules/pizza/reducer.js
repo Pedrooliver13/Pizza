@@ -8,9 +8,9 @@ import {
 
 const initialState = {
   pizza: {
-    dough: { step: 1 },
-    size: { step: 2 },
-    filling: { step: 3 },
+    dough: { name: "", step: 1 },
+    size: { name: "", step: 2 },
+    filling: { name: "", step: 3 },
     price: 0,
   },
 };

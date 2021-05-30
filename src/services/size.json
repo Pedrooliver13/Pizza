@@ -3,19 +3,19 @@
     {
       "name": "Pequena",
       "description": "Pizza pequena",
-      "price": 25,
+      "price": 10,
       "image": "https://i.pinimg.com/736x/7a/79/a5/7a79a5d99715f2af9dc23474b8d27575.jpg"
     },
     {
       "name": "Média",
       "description": "Pizza média",
-      "price": 10,
+      "price": 15,
       "image": "https://media.cuponeria.com.br/2018/08/cupom-dominos-balcao-pizza-media-especialidades-por-r2190_2228-420x279.jpg"
     },
     {
       "name": "Grande",
       "description": "Pizza Grande",
-      "price": 15,
+      "price": 25,
       "image": "https://i.pinimg.com/564x/a6/71/66/a67166d14a11096393ef9b2359177751.jpg"
     }
   ]

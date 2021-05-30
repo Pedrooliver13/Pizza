@@ -49,8 +49,17 @@ export const Wrapper = styled.div`
 export const Submit = styled.div`
   width: 100%;
   display: flex;
-  align-items: center;
-  justify-content: flex-end;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+
+  .error {
+    width: 250px;
+    font-weight: bold;
+    font-size: 1rem;
+    line-height: 2.5;
+    color: ${C.PizzaAlert};
+  }
 
   button {
     display: flex;

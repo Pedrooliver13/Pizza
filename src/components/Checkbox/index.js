@@ -9,7 +9,7 @@ const Checkbox = ({ checked, index, onClick }) => {
         checked={checked === index}
         readOnly
       />
-      <label> </label>
+      <label></label>
     </Styled.Wrapper>
   );
 };

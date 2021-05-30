@@ -6,7 +6,7 @@ import Button from "../Button";
 
 import * as Styled from "./style";
 
-const SectionWrapper = ({ data, handleClick, step }) => {
+const SectionWrapper = ({ data, handleClick, step, message }) => {
   const [checked, setChecked] = useState();
 
   return (
@@ -31,6 +31,7 @@ const SectionWrapper = ({ data, handleClick, step }) => {
         <Button onClick={() => handleClick(checked)}>
           montar meu pedido <FiArrowRight size={20} />
         </Button>
+        {message && <p className="error">Selecione uma opção</p>}
       </Styled.Submit>
     </Styled.Wrapper>
   );
