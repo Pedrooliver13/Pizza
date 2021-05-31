@@ -65,11 +65,16 @@ export const Submit = styled.div`
   justify-content: center;
 
   .error {
-    width: 250px;
     font-weight: bold;
     font-size: 1rem;
     line-height: 2.5;
     color: ${C.PizzaAlert};
+
+    @media (max-width: ${C.XL}) {
+      .error {
+        text-align: end;
+      }
+    }
   }
 
   button {
