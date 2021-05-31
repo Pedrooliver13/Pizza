@@ -4,6 +4,7 @@ import {
   ADD_SIZE,
   ADD_PRICE,
   CLEAR_PIZZA,
+  PIZZA_SELETED,
 } from "../typeActions";
 
 const initialState = {
@@ -13,10 +14,13 @@ const initialState = {
     filling: { name: "", step: 3 },
     price: 0,
   },
+  selected: null
 };
 
 export const pizzaReducer = (state = initialState, action) => {
   switch (action.type) {
+    case PIZZA_SELETED:
+      return {...state, selected: action.data};
     case ADD_DOUGH:
       return {
         ...state,

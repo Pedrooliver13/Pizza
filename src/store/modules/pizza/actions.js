@@ -4,7 +4,13 @@ import {
   ADD_SIZE,
   ADD_FILLING,
   CLEAR_PIZZA,
+  PIZZA_SELETED,
 } from "../typeActions";
+
+export const pizzaSelected = (data) => ({
+  type: PIZZA_SELETED,
+  data
+})
 
 export const addDough = (data) => ({
   type: ADD_DOUGH,

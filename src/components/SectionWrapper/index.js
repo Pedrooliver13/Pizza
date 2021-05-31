@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useSelector } from "react-redux";
 import { FiArrowRight } from "react-icons/fi";
 
 import Card from "../Card";
@@ -6,8 +6,8 @@ import Button from "../Button";
 
 import * as Styled from "./style";
 
-const SectionWrapper = ({ data, handleClick, step, message }) => {
-  const [checked, setChecked] = useState();
+const SectionWrapper = ({ data, handleClick, step, totalTabs, message }) => {
+  const selected = useSelector(state => state.pizzaReducer.selected);
 
   return (
     <Styled.Wrapper>
@@ -22,13 +22,12 @@ const SectionWrapper = ({ data, handleClick, step, message }) => {
           key={index}
           data={item}
           index={index}
-          state={checked}
-          setState={setChecked}
+          selected={selected}
         />
       ))}
 
       <Styled.Submit>
-        <Button onClick={() => handleClick(checked)}>
+        <Button onClick={() => handleClick(selected)}>
           montar meu pedido <FiArrowRight size={20} />
         </Button>
         {message && <p className="error">Selecione uma opção</p>}

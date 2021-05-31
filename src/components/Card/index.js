@@ -1,9 +1,14 @@
+import { useDispatch } from "react-redux";
+
 import Checkbox from "../Checkbox";
 import { formatBRL } from '../../utils/index';
+import { pizzaSelected } from '../../store/modules/pizza/actions';
 
 import * as Styled from "./style";
 
-const Card = ({ data, index, state, setState }) => {
+const Card = ({ data, index, selected }) => {
+  const dispatch = useDispatch();
+  
   return (
     <Styled.Wrapper>
       <Styled.Image src={data?.image} alt={data.name} />
@@ -20,8 +25,8 @@ const Card = ({ data, index, state, setState }) => {
       <Styled.WrapperCheckbox>
         <Checkbox
           index={index}
-          checked={state?.id}
-          onClick={() => setState({ ...data, id: index })}
+          checked={selected?.id}
+          onClick={() => dispatch(pizzaSelected({ ...data, id: index }))}
         />
       </Styled.WrapperCheckbox>
     </Styled.Wrapper>

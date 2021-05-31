@@ -1,27 +1,29 @@
-import { Content } from '../../styles/container';
+import { useState } from "react";
 
-import Step1 from '../Step1';
+import Dough from "../Dough";
+import Size from "../Size";
+import Filling from "../Filling";
+import Results from '../Results';
 import SectionMain from "../../components/SectionMain";
 
+import { getFeaturedItem } from "../../utils";
+import { Content } from "../../styles/container";
 import { pizzas } from "../../services/pizza.json";
 
 const Home = () => {
-  function getRandomNumber(totalLength) {
-    const randomNumber = Math.floor(Math.random() * (totalLength - 1));
-    return randomNumber;
-  }
-  
-  function getFeaturedItem(results) {
-    let randomNumber = getRandomNumber(results.length);
-    let featuredItem = results[randomNumber];
-  
-    return featuredItem;
-  }
+  const [step, setStep] = useState(1);
+
+  const arrayTab = [
+    <Dough state={step} setState={setStep} />,
+    <Size state={step} setState={setStep} />,
+    <Filling state={step} setState={setStep} />,
+    <Results setState={setStep}/>,
+  ];
 
   return (
     <Content>
-      <SectionMain data={getFeaturedItem(pizzas)}/>
-      <Step1 />
+      {step === 1 && <SectionMain data={getFeaturedItem(pizzas)} />}
+      {step <= arrayTab.length && arrayTab[step - 1]}
     </Content>
   );
 };

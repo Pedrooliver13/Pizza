@@ -1,5 +1,3 @@
-import { useEffect } from "react";
-import { useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
 import Button from "../../components/Button";
@@ -8,22 +6,13 @@ import { clearPoint } from "../../store/modules/points/actions";
 import { clearPizza } from "../../store/modules/pizza/actions";
 
 import * as Styled from "./style";
-import { Content } from "../../styles/container";
 
-const Results = () => {
+const Results = ({ setState }) => {
   const dispatch = useDispatch();
-  const history = useHistory();
-  
+
   const { dough, size, filling, price } = useSelector(
     (state) => state.pizzaReducer.pizza
   );
-  const hasPizza = !dough.name || !size.name || !filling.name;
-
-  useEffect(() => {
-    if(hasPizza) {
-      return history.push("/");
-    }
-  }, [hasPizza, history])
 
   const data = {
     name: `Pizza de ${filling.name} ${size.name}`,
@@ -34,24 +23,26 @@ const Results = () => {
     points: 50,
   };
 
+  const handleClick = () => {
+    setState(1);
+    dispatch(clearPizza());
+  };
+
+  const handleClearState = () => {
+    dispatch(clearPoint())
+  }
+
   return (
-    <Content>
+    <Styled.Wrapper>
       <SectionMain title="Pizza comprada:" data={data} hiddenButton />
 
       <Styled.TextBlock>
         <p>Compra concluída + 50 pontos</p>
 
-        <Button onClick={() => dispatch(clearPoint())}>Limpar pontuação</Button>
-        <Button
-          onClick={() => {
-            dispatch(clearPizza());
-            history.push("/");
-          }}
-        >
-          Voltar para home
-        </Button>
+        <Button onClick={handleClearState}>Limpar pontuação</Button>
+        <Button onClick={handleClick}>Voltar para home</Button>
       </Styled.TextBlock>
-    </Content>
+    </Styled.Wrapper>
   );
 };
 
