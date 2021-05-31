@@ -19,7 +19,7 @@ const Card = ({ data, index, selected }) => {
           <div className="description">{data.description}</div>
         </div>
 
-        <div className="price"><span>{formatBRL(data.price)}</span></div>
+        <div className="price">{formatBRL(data.price)}</div>
       </Styled.Description>
 
       <Styled.WrapperCheckbox>

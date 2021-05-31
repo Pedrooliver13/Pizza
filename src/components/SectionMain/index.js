@@ -44,9 +44,7 @@ const SectionMain = ({ data, title, hiddenButton }) => {
             </div>
 
             <Styled.Buy>
-              <div className="price">
-                <span>{formatBRL(data?.price)}</span>
-              </div>
+              <div className="price">{formatBRL(data?.price)}</div>
 
               {!hiddenButton && (
                 <Button onClick={() => handleClick(data.points)}>

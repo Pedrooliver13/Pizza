@@ -63,13 +63,9 @@ export const Description = styled.div`
   }
 
   .price {
-    color: ${C.PizzaGreenLight};
+    color: ${C.PizzaGreen};
     font-size: 2rem;
     font-weight: bold;
-
-    span {
-      color: ${C.PizzaGreen};
-    }
 
     @media (max-width: ${C.MD}) {
       font-size: 1.2rem;
@@ -78,7 +74,7 @@ export const Description = styled.div`
 
   @media (max-width: ${C.MD}) {
     width: 55%;
-    padding: 1rem .5rem;
+    padding: 1rem 0.5rem;
   }
 `;
 

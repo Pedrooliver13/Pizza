@@ -178,15 +178,10 @@ export const Buy = styled.div`
   }
 
   .price {
-    color: ${C.PizzaGreenLight};
+    color: ${C.PizzaGreen};
     font-size: 1.8rem;
     font-weight: bold;
-
-    span {
-      display: inline-block;
-      color: ${C.PizzaGreen};
-    }
-
+    
     @media (max-width: ${C.SM}) {
       font-size: 1.1rem;
     }
